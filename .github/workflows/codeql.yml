@@ -83,3 +83,9 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: csharp.sarif
+        path: ${{runner.workspace}}/results/*.sarif

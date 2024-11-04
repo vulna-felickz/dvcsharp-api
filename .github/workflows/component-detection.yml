@@ -11,6 +11,7 @@ jobs:
   dependency-submission:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - run: dotnet restore
       - name: Component detection 
-        uses: advanced-security/component-detection-dependency-submission-action@v0.0.3
+        uses: advanced-security/component-detection-dependency-submission-action@node-20
